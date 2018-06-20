@@ -2,9 +2,16 @@
 <html>
 
 <head>
-    <title>Javascript MVC Test</title>
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <title>Javascript MVC Todo App</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
     <style>
         body {
             font-family: 'Lato', sans-serif;
@@ -26,6 +33,18 @@
         .completed {
             text-decoration: line-through;
         }
+
+        img.logo {
+            padding-bottom: 10%;
+        }
+
+        input {
+            margin-bottom: 5%;
+        }
+        .alert {
+            display: block;
+        }
+
     </style>
 
 </head>
@@ -35,10 +54,15 @@
 
     <div class="js-container">
 
+        <img src="images/whitecap-logo-blue.svg" class="logo" alt="Whitecap Media Inc." title="Whitecap Media Inc." />
+
         <input type="text" class="js-task-textbox">
         <input type="button" class="js-add-task-button" value="Add Task">
 
         <div class="js-tasks-container"></div>
+
+        <div class="alert alert-danger" role="alert"></div>
+
         <!-- end tasks -->
         <input type="button" class="js-complete-task-button" value="Complete Tasks">
         <input type="button" class="js-delete-task-button" value="Delete Tasks">
@@ -52,6 +76,7 @@
     <script src="js/TaskModel.js"></script>
     <script src="js/TaskView.js"></script>
     <script src="js/TaskController.js"></script>
+    <script src="js/AlertDialog.js"></script>
     <script src="js/App.js"></script>
 
 </body>

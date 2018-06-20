@@ -29,6 +29,8 @@ TaskView.prototype = {
 		this.$taskTextBox = this.$container.find('.js-task-textbox');
 		this.$tasksContainer = this.$container.find('.js-tasks-container');
 
+		this.$alertDialog = new AlertDialog();
+
 		return this;
 	},
 
@@ -72,11 +74,17 @@ TaskView.prototype = {
 
 	// Add Task Button:
 	addTaskButton: function() {
-		//console.log("ADD TASK", this.$taskTextBox.val());
-		this.addTaskEvent.notify({
-			task: this.$taskTextBox.val()
-		});
-		this.show();
+		console.log("ADD TASK", this.$taskTextBox.val());
+		if (this.$taskTextBox.val() != '') {
+			this.addTaskEvent.notify({
+				task: this.$taskTextBox.val()
+			});
+			this.show();
+		} else {
+			//alert("Please enter a new task");
+			this.$alertDialog.message('Please enter a new task.');
+		}
+		
 	},
 
 	// Complete Task Button:
@@ -94,7 +102,7 @@ TaskView.prototype = {
 	setSelectedTaskState: function() {
 		var taskIndex = $(event.target).attr('data-index');
 
-		if ($(event.target).attr('data-task-selected') === false) {
+		if ($(event.target).attr('data-task-selected') === "false") {
 			//console.log('update state' + $(event.target).attr('data-task-selected'));
 			$(event.target).attr('data-task-selected', true);
 			this.selectTaskEvent.notify({
@@ -131,7 +139,7 @@ TaskView.prototype = {
 				html += '<div>';
 			}
 			
-			$tasksContainer.append(html + '<label class="task"><input type="checkbox" class="js-task" data-index="'+i+'" data-task-selected='+tasks[task].taskStatus+'>' + tasks[task].taskName + '</label></div>');
+			$tasksContainer.append(html + '<label class="task"><input type="checkbox" class="js-task" data-index="'+i+'" data-task-selected="false">' + tasks[task].taskName + '</label></div>');
 
 			i++;
 		}
