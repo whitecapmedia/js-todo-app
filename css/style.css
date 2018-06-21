@@ -1,0 +1,45 @@
+/** Colours
+        --------------------------------------------------------------
+            *Green-Blue(sea)    #009999 | rgb(0,153,153)
+            *light Blue         #3399FF | rgb(51,153,255)
+            *medium Blue        #0066CC | rgb(0,102,204)
+            *dark Blue          #003366 | rgb(0,51,102)
+            *darkest Blue       #000F34 | rgb(0,15,52)
+            -(purple-blue)
+            *Charcoal (text)    #2C2E36 | rgb(44,46,54)
+            *Red                #DC282E | rgb(220,40,46)
+        **/
+
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            color: #F00000;
+        }
+
+        .js-container {
+            max-width: 320px;
+            margin: 0 auto;
+            padding: 1%;
+        }
+
+        .task {
+            display: block;
+            border-bottom: 1px solid #E5E5E5;
+            padding: 1%;
+            margin-bottom: 2%;
+        }
+        .completed {
+            text-decoration: line-through;
+        }
+
+        img.logo {
+            padding-bottom: 10%;
+        }
+
+        input {
+            margin-bottom: 5%;
+        }
+        .alert {
+            display: block;
+        }
